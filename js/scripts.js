@@ -9,3 +9,4 @@
 const webDeveloperElement = document.getElementById('webDeveloper');
 
 webDeveloperElement.classList.add('blinkingCursor');
+

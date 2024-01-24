@@ -194,8 +194,15 @@ abbr[title] {
 }
 
 .blinkingCursor {
-  animation: blink 1s step-end infinite;
+  animation: blinker 1s linear infinite;
 }
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 
 
 address {
@@ -5327,24 +5334,45 @@ textarea.form-control-lg {
   min-height: calc(100% - var(--bs-modal-margin) * 2);
 }
 
-.button-info {
-  margin-top: 4rem;
+.button-collaborate {
+  margin-top: 4px;
 }
 
-.button-info button {
-  border-radius: 10px;
-  box-shadow: 0 2px 4px black;
-  border: 1px solid #fff;
-  color: black;
-  /* background-color: #000; */
-  font-size: 16px;
+#collaborateButton {
+  background: white;
+  color: black; /* Warna teks pada tombol ketika warna latar belakang putih */
+  border: 1px solid #ccc;
   padding: 10px 20px;
   cursor: pointer;
+  transition: all 0.3s ease; /* Menambahkan transition untuk efek hover pada semua properti */
+  border-radius: 10px;
 }
 
-.button-info button:hover {
-  background-color: #fff;
-  color: #000;
+#collaborateButton:hover {
+  background: #FDF5E6;
+  color: black; /* Ganti warna teks menjadi putih pada saat hover */
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+/* CSS untuk ikon mouse */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.scroll-down a {
+  font-size: 30px;
+  color: #fff;
+}
+
+/* CSS untuk section selanjutnya */
+#next-section {
+  padding: 50px 0;
 }
 
 
