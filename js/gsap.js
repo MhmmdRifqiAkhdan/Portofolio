@@ -29,4 +29,26 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Tambahkan animasi lainnya sesuai kebutuhan
   });
+
+  // Function to create slide-track animation
+  function slideTrackAnimation() {
+    const text = document.querySelector('.slider-track');
+    const textWidth = text.offsetWidth;
+    const parentWidth = text.parentNode.offsetWidth;
+    const duration = (textWidth / parentWidth) * 10; // Adjust speed based on text width
+
+    // Create animation
+    text.animate([
+        { transform: 'translateX(0)' },
+        { transform: `translateX(-${textWidth}px)` }
+    ], {
+        duration: duration * 1000, // Convert to milliseconds
+        iterations: Infinity
+    });
+}
+
+// Call the function when the page loads
+window.onload = function() {
+    slideTrackAnimation();
+};
   

@@ -203,7 +203,62 @@ abbr[title] {
   }
 }
 
+.slider-container {
+  overflow: hidden;
+  height: 50px; /* Set the height of the container */
+  position: relative;
+}
 
+.slider-track {
+  position: absolute;
+  white-space: nowrap; /* Prevent text from wrapping */
+  animation: slideTracker 10s linear infinite; /* Adjust animation duration as needed */
+}
+
+@keyframes slideTracker {
+  0% {
+    transform: translateX(100%); /* Start position (off screen to the right) */
+  }
+  50% {
+    transform: translateX(-100%); /* Middle position (off screen to the left) */
+  }
+  100% {
+    transform: translateX(100%); /* End position (off screen to the right) */
+  }
+}
+
+.text-gradient {
+  /* Add your gradient styles here */
+  background: linear-gradient(to right, #ff0000, #00ff00); /* Example gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.slide-track {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-track::before,
+.slide-track::after {
+  content: attr(data-text);
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: slide-in 5s linear infinite;
+}
+
+@keyframes slide-in {
+  0% {
+      transform: translateX(0%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
 
 address {
   margin-bottom: 1rem;
@@ -5355,6 +5410,54 @@ textarea.form-control-lg {
   padding: 10px 20px;
   border-radius: 10px;
 }
+
+#backButton {
+  background: white;
+  color: black; /* Warna teks pada tombol ketika warna latar belakang putih */
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Menambahkan transition untuk efek hover pada semua properti */
+  border-radius: 10px;
+}
+
+#backButton:hover {
+  background: #FDF5E6;
+  color: black; /* Ganti warna teks menjadi putih pada saat hover */
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+#nextButton {
+  background: white;
+  color: black; /* Warna teks pada tombol ketika warna latar belakang putih */
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Menambahkan transition untuk efek hover pada semua properti */
+  border-radius: 10px;
+}
+
+#nextButton:hover {
+  background: #FDF5E6;
+  color: black; /* Ganti warna teks menjadi putih pada saat hover */
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 /* CSS untuk ikon mouse */
 .scroll-down {
